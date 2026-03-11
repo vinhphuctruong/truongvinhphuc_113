@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const apiRoutes = require('./routes/api');
 
 const app = express();
-app.use(express.json()); // Hỗ trợ đọc dữ liệu body rạng JSON
+app.use(express.json());
+app.use(express.static('public')); // Phục vụ các file tĩnh (html, css, js) từ thư mục public
 
 // Đăng ký toàn bộ router API vào ứng dụng với tiền tố /api
 app.use('/api', apiRoutes);
